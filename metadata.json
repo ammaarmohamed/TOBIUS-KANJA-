@@ -1,0 +1,8 @@
+{
+  "name": "Tobias Kanja — NFC Digital Card",
+  "description": "High-speed, mobile-first NFC digital business card and bio-link profile for Tobias Kanja, Bachelor of Information Technology student at Meru University of Science and Technology.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

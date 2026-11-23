@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+:root,
+[data-theme="emerald"] {
+  --bg-base: #06130e;
+  --bg-surface: #0a1f18;
+  --bg-card: #0e271f;
+  --bg-card-hover: #15382c;
+  --border-subtle: rgba(52, 211, 153, 0.16);
+  --border-hover: rgba(245, 158, 11, 0.45);
+  --accent-emerald: #10b981;
+  --accent-gold: #f59e0b;
+  --text-primary: #f0fdf4;
+  --text-secondary: #cbd5e1;
+  --text-sub: #94a3b8;
+  --btn-primary-bg: #10b981;
+  --btn-primary-text: #022c22;
+  --glow-color: rgba(16, 185, 129, 0.15);
+  --spotlight-color: rgba(16, 185, 129, 0.16);
+  --avatar-ring: linear-gradient(180deg, #10b981 0%, #f59e0b 100%);
+}
+
+[data-theme="sapphire"] {
+  --bg-base: #070d17;
+  --bg-surface: #0c1726;
+  --bg-card: #112137;
+  --bg-card-hover: #19304e;
+  --border-subtle: rgba(56, 189, 248, 0.16);
+  --border-hover: rgba(96, 165, 250, 0.45);
+  --accent-emerald: #38bdf8;
+  --accent-gold: #818cf8;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-sub: #94a3b8;
+  --btn-primary-bg: #38bdf8;
+  --btn-primary-text: #082f49;
+  --glow-color: rgba(56, 189, 248, 0.15);
+  --spotlight-color: rgba(56, 189, 248, 0.16);
+  --avatar-ring: linear-gradient(180deg, #38bdf8 0%, #818cf8 100%);
+}
+
+[data-theme="amber"] {
+  --bg-base: #110e0c;
+  --bg-surface: #1c1613;
+  --bg-card: #271f1a;
+  --bg-card-hover: #372b24;
+  --border-subtle: rgba(245, 158, 11, 0.18);
+  --border-hover: rgba(251, 191, 36, 0.45);
+  --accent-emerald: #f59e0b;
+  --accent-gold: #fbbf24;
+  --text-primary: #fffbeb;
+  --text-secondary: #e7e5e4;
+  --text-sub: #a8a29e;
+  --btn-primary-bg: #f59e0b;
+  --btn-primary-text: #451a03;
+  --glow-color: rgba(245, 158, 11, 0.15);
+  --spotlight-color: rgba(245, 158, 11, 0.16);
+  --avatar-ring: linear-gradient(180deg, #f59e0b 0%, #fbbf24 100%);
+}
+
+[data-theme="carbon"] {
+  --bg-base: #09090b;
+  --bg-surface: #121215;
+  --bg-card: #18181b;
+  --bg-card-hover: #27272a;
+  --border-subtle: rgba(255, 255, 255, 0.09);
+  --border-hover: rgba(255, 255, 255, 0.25);
+  --accent-emerald: #ffffff;
+  --accent-gold: #a1a1aa;
+  --text-primary: #f4f4f5;
+  --text-secondary: #d4d4d8;
+  --text-sub: #a1a1aa;
+  --btn-primary-bg: #ffffff;
+  --btn-primary-text: #09090b;
+  --glow-color: rgba(255, 255, 255, 0.08);
+  --spotlight-color: rgba(255, 255, 255, 0.09);
+  --avatar-ring: linear-gradient(180deg, #ffffff 0%, #71717a 100%);
+}
+
+html,
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    color 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes nfcPulse {
+  0% {
+    transform: scale(0.98);
+    opacity: 0.65;
+  }
+  70% {
+    transform: scale(1.13);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.13);
+    opacity: 0;
+  }
+}
+
+.nfc-pulse-ring {
+  animation: nfcPulse 2.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes toastSlideUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 14px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+.toast-enter {
+  animation: toastSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.tap-card {
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 150ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tap-card:active {
+  transform: scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nfc-pulse-ring,
+  .animate-ping,
+  .toast-enter {
+    animation: none !important;
+  }
+}

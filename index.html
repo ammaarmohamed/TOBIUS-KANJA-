@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" data-theme="carbon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tobias Kanja — NFC Digital Card</title>
+    <meta
+      name="description"
+      content="High-speed, mobile-first NFC digital business card and bio-link profile for Tobias Kanja, Bachelor of Information Technology student at Meru University of Science and Technology."
+    />
+    <meta property="og:title" content="Tobias Kanja — NFC Digital Card" />
+    <meta
+      property="og:description"
+      content="Bachelor of Information Technology student at Meru University of Science and Technology. Connect via WhatsApp, Call, Email, or save contact directly."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#09090b" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Tobias NFC" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+
+    <!-- Non-blocking Plus Jakarta Sans font load -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap"
+      />
+    </noscript>
+
+    <!-- Embedded fallback config for zero-latency / offline resilience -->
+    <script>
+      window.DEFAULT_CARD_CONFIG = {
+        themeDefault: 'carbon',
+        profile: {
+          fullName: 'Tobias Kanja',
+          initials: 'TK',
+          avatarWebp: '',
+          avatarJpg: '',
+          primaryRole: 'Bachelor of Information Technology',
+          company: 'Meru University',
+          secondaryAffiliation: 'School of Computing & Informatics',
+          organizationFullName: 'Meru University of Science & Technology',
+          organizationAcronym: 'MUST',
+          hookStatement:
+            'Building responsive web experiences, clean UI systems, and mobile applications at Meru University of Science & Technology.',
+          focusChips: ['Web Development', 'UI Design', 'Mobile Apps'],
+        },
+        contact: {
+          whatsapp: '+254142987767',
+          phone: '+254142987767',
+          phoneDisplay: '0142987767',
+          email: 'Murimitobias@gmail.com',
+        },
+        links: [
+          {
+            id: 'instagram',
+            platform: 'instagram',
+            title: 'Instagram',
+            subtitle: '@tobiaskanjaofficial · Visuals & Updates',
+            url: 'https://www.instagram.com/tobiaskanjaofficial/',
+          },
+          {
+            id: 'tiktok',
+            platform: 'tiktok',
+            title: 'TikTok',
+            subtitle: '@tobiaskanjaofficial · Tech & Campus Clips',
+            url: 'https://www.tiktok.com/@tobiaskanjaofficial',
+          },
+          {
+            id: 'linkedin',
+            platform: 'linkedin',
+            title: 'LinkedIn',
+            subtitle: 'Tobias Kanja · MUST IT & Professional Network',
+            url: 'https://www.linkedin.com/in/tobiaskanjaofficial',
+          },
+          {
+            id: 'portfolio',
+            platform: 'portfolio',
+            title: 'Portfolio',
+            subtitle: 'Web Development, UI Design & Mobile Apps',
+            url: 'https://github.com/tobiaskanjaofficial',
+          },
+        ],
+        footer: {
+          name: 'Tobias Kanja',
+          year: '2026',
+          tagline: 'Tap to Connect',
+        },
+      };
+    </script>
+    <script src="/card.config.js"></script>
+    <script>
+      (function () {
+        try {
+          var allowed = ['carbon', 'emerald', 'sapphire', 'amber'];
+          var saved = localStorage.getItem('nfc-card-theme');
+          var cfgDefault =
+            (window.CARD_CONFIG && window.CARD_CONFIG.themeDefault) ||
+            window.DEFAULT_CARD_CONFIG.themeDefault ||
+            'carbon';
+          var theme = allowed.indexOf(saved) !== -1 ? saved : cfgDefault;
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'carbon');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
